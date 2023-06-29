@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"os"
@@ -11,6 +12,8 @@ var pwd = os.Getenv("CHOPPA_PASSWORD")
 func main() {
 	db.connect()
 
+	fmt.Println("test")
+	
 	router := gin.Default()
 	router.SetTrustedProxies(nil)
 	router.GET("/", getChop)
